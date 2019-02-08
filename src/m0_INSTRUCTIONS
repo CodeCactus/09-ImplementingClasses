@@ -14,3 +14,33 @@ Then, for each DONE 3 to the end of the exercise, you will do the following:
    -- Implement and test the method.
 
 We will code the first few TODOs together.
+
+
+class graded_sections(object):
+    def __init__(self,ESHW,ESL,ESQ,STSRQ,STSESS,CSSEmood,CSSEdaily,CSSEpaperQ,CSSEEX,PROJMan,PROJdeliv):
+        self.ESHW=(ESHW, 0.0667)
+        self.ESL=(ESL,0.1333)
+        self.ESQ=(ESQ,0.2)
+        self.STSRQ=(STSRQ,0.2)
+        self.STSESS=(STSESS,0.08)
+        self.CSSEmood=(CSSEmood,0.0667)
+        self.CSSEdaily=(CSSEdaily,0.1333)
+        self.CSSEpaperQ=(CSSEpaperQ,0.0667)
+        self.CSSEEX=(CSSEEX,0.1333)
+        self.PROJMan=(PROJMan,0.07)
+        self.PROJdeliv=(PROJdeliv,0.1)
+
+    def overall_grade(self):
+        summingscore=0
+        variables=[self.ESHW,self.ESL,self.ESQ,self.STSRQ,self.STSESS,self.CSSEmood,self.CSSEdaily,self.CSSEpaperQ,self.CSSEEX,self.PROJMan,self.PROJdeliv]
+        for k in range(11):
+            summingscore=summingscore+((variables[k][0])*variables[k][1])
+            print(summingscore, '+score from:'+ str(variables[k]))
+            if k==10:
+                print('Th-th-thats all folks!')
+
+
+
+
+mygrade = graded_sections(95.66,96.94,82.86,96.38,81.111,99.34,100,95,97,81.111,81.111)
+mygrade.overall_grade()
